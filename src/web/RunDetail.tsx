@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
+import { flushSync } from 'react-dom';
 import type { AnalysisResult, ClarifyingQuestion, Fact, FactKey, FactOverrides, PolicyFacts, RateComponent, RateResult } from '../core/types';
 import type { RunRecord } from '../server/runs';
 import {
@@ -57,6 +58,13 @@ export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onA
   const [tab, setTab] = useState<Tab>('trace');
   const [pdfPage, setPdfPage] = useState<number | undefined>();
   const openPage = (page: number) => (setPdfPage(page), setTab('pdf'));
+  const printing = usePrinting();
+  const [copied, setCopied] = useState(false);
+  const copyLink = () =>
+    navigator.clipboard.writeText(location.href).then(
+      () => (setCopied(true), setTimeout(() => setCopied(false), 2000)),
+      () => prompt('Copy this link', location.href),
+    );
   const ocrPages = run.pages.filter((p) => p.source === 'ocr').length;
   const facts = analysis?.facts;
 
@@ -91,6 +99,14 @@ export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onA
                 </select>
               </label>
             )}
+          <button className="ghost" onClick={copyLink} title="Copy a link that opens this analysis">
+            <Icon name={copied ? 'ok' : 'link'} /> <span className="hide-sm">{copied ? 'Copied' : 'Copy link'}</span>
+          </button>
+          {analysis && (
+            <button className="ghost" onClick={() => print()} title="Print the verdict, trace and facts, or save them as a PDF">
+              <Icon name="print" /> <span className="hide-sm">Report</span>
+            </button>
+          )}
           {analysis && (
             <button
               className="ghost"
@@ -149,15 +165,36 @@ export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onA
               { id: 'pdf' as const, label: 'Policy PDF', short: 'PDF' },
             ]}
           />
-          {analysis && tab === 'trace' && <Trace result={analysis.result} />}
-          {analysis && tab === 'facts' && (
-            <Facts analysis={analysis} editable={latest && !busy} onAnswer={onAnswer} onPage={openPage} />
+          {analysis && (tab === 'trace' || printing) && (
+            <>
+              {printing && <h2 className="print-only">Decision trace</h2>}
+              <Trace result={analysis.result} />
+            </>
+          )}
+          {analysis && (tab === 'facts' || printing) && (
+            <>
+              {printing && <h2 className="print-only">Extracted facts</h2>}
+              <Facts analysis={analysis} editable={latest && !busy && !printing} onAnswer={onAnswer} onPage={openPage} />
+            </>
           )}
           <PdfPanel active={!analysis || tab === 'pdf'} page={pdfPage} getPdf={getPdf} />
         </section>
       )}
     </article>
   );
+}
+
+/** True while the browser prints, so the report shows the trace and the facts together instead of one tab. */
+function usePrinting() {
+  const [printing, setPrinting] = useState(false);
+  useEffect(() => {
+    const before = () => flushSync(() => setPrinting(true)); // must render before the print snapshot is taken
+    const after = () => setPrinting(false);
+    addEventListener('beforeprint', before);
+    addEventListener('afterprint', after);
+    return () => (removeEventListener('beforeprint', before), removeEventListener('afterprint', after));
+  }, []);
+  return printing;
 }
 
 function RunBanners({ run, busy, onResumeUpload, onResumeExtract, onAnswer }: Omit<Props, 'job' | 'getPdf' | 'onDelete'>) {
@@ -248,6 +285,7 @@ function Verdict({ result }: { result: RateResult }) {
 
 function RateTile({ label, c }: { label: string; c: RateComponent }) {
   const na = c.applicability === 'not_applicable';
+  const printing = usePrinting(); // the report lists the cited cells without needing a click
   return (
     <div className={`tile ${c.applicability}`}>
       <div className="tile-head">
@@ -274,7 +312,7 @@ function RateTile({ label, c }: { label: string; c: RateComponent }) {
       ) : null}
       {!na && <p className="tile-reason">{c.reason}</p>}
       {c.citations.length > 0 && (
-        <details className="cells">
+        <details className="cells" open={printing || undefined}>
           <summary>
             <Icon name="chevron" size={14} /> {c.citations.length} grid {c.citations.length === 1 ? 'cell' : 'cells'} cited
           </summary>

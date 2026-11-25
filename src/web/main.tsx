@@ -161,7 +161,7 @@ function App() {
   }
 
   /** Deletes a run (record and stored PDF chunks) after a confirmation, then returns to the start screen. */
-  async function removeRun(r: RunRecord) {
+  async function removeRun(r: Pick<RunRecord, 'id' | 'fileName'>) {
     if (!confirm(`Delete "${r.fileName}"?\n\nThe analysis, every revision and the stored PDF are removed for everyone. This cannot be undone.`)) return;
     setJobError(null);
     try {
@@ -299,6 +299,15 @@ function App() {
                       {s.tpRate != null && <span>TP {fmtRate(s.tpRate)}</span>}
                     </span>
                   )}
+                </button>
+                <button
+                  className="row-delete"
+                  onClick={() => void removeRun(s)}
+                  disabled={job?.runId === s.id}
+                  aria-label={`Delete ${s.fileName}`}
+                  title={job?.runId === s.id ? 'Wait for the current step to finish' : 'Delete this analysis'}
+                >
+                  <Icon name="trash" size={15} />
                 </button>
               </li>
             );
