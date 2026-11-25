@@ -1,0 +1,1000 @@
+{
+  "engineVersion": "1.0.0",
+  "facts": {
+    "insurerName": {
+      "value": "HDFC ERGO General Insurance Company Limited",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "HDFC ERGO General Insurance Company Limited",
+          "source": "ocr"
+        }
+      ]
+    },
+    "insurer": {
+      "value": "hdfc-ergo",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "HDFC ERGO General Insurance Company Limited",
+          "source": "ocr"
+        }
+      ]
+    },
+    "policyType": {
+      "value": "package",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": ": : PRIVATE CAR COMPREHENSIVE POLICY",
+          "source": "ocr"
+        }
+      ]
+    },
+    "businessType": {
+      "value": "rollover",
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Previous Policy No. 620272823178 62 29/03/2025 to 28/03/2026 of TATA AIG GENERAL INSURANCE CO.LTD. NCB | 25% |",
+          "source": "ocr"
+        }
+      ],
+      "note": "Previous insurer TATA AIG GENERAL INSURANCE CO.LTD. differs from HDFC ERGO"
+    },
+    "previousInsurer": {
+      "value": "TATA AIG GENERAL INSURANCE CO.LTD.",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Previous Policy No. 620272823178 62 29/03/2025 to 28/03/2026 of TATA AIG GENERAL INSURANCE CO.LTD. NCB | 25% |",
+          "source": "ocr"
+        }
+      ]
+    },
+    "make": {
+      "value": "MAHINDRA",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "M/S GLOBAL SOLUTIONS CO. LTD. Make MAHINDRA Policy No. 23022/208393018307915",
+          "source": "ocr"
+        }
+      ]
+    },
+    "model": {
+      "value": "BOLERO NEO-N10 (R)",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Communication Address: Model BOLERO NEO-N10 (R) Period of From 29 Mar, 2026 00:01 hrs",
+          "source": "ocr"
+        }
+      ]
+    },
+    "fuel": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "The schedule prints no fuel type, and the model name has no fuel word"
+    },
+    "cngLpgKit": {
+      "value": false,
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "From 29/03/2026 To 28/03/2027 741150 oo [ oo | oo | 0 | 741150",
+          "source": "ocr"
+        }
+      ],
+      "note": "Total IDV equals the vehicle IDV, so the CNG/LPG kit IDV is 0"
+    },
+    "cc": {
+      "value": 1493,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "HARYANA - 122002 Tel Cubic Capacity Watts 1493 ~~ Seats 7 Customer Id 101163279601",
+          "source": "ocr"
+        }
+      ]
+    },
+    "seats": {
+      "value": 7,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "HARYANA - 122002 Tel Cubic Capacity Watts 1493 ~~ Seats 7 Customer Id 101163279601",
+          "source": "ocr"
+        }
+      ]
+    },
+    "manufactureYear": {
+      "value": 2023,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Year of Manufacture ~~ 2023 Body Type SUV",
+          "source": "ocr"
+        }
+      ]
+    },
+    "registrationDate": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Registration date not printed"
+    },
+    "vehicleAgeYears": {
+      "value": 3,
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Year of Manufacture ~~ 2023 Body Type SUV",
+          "source": "ocr"
+        },
+        {
+          "page": 1,
+          "quote": "From 29/03/2026 To 28/03/2027 741150 oo [ oo | oo | 0 | 741150",
+          "source": "ocr"
+        }
+      ],
+      "note": "Policy start year minus year of manufacture 2023; the manufacture month is not printed"
+    },
+    "registrationNumber": {
+      "value": "HR-26-FB-8239",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "TECH PARKA 2 UNIT 12 URGAON GURUGRAM Registration No HR-26-FB-8239 Insurance To 28 Mar, 2027 23:59",
+          "source": "ocr"
+        }
+      ],
+      "note": "Read from the contrast-enhanced OCR pass (faint grey text the plain pass missed)"
+    },
+    "rtoCode": {
+      "value": "HR-26",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "TECH PARKA 2 UNIT 12 {URGAON GURUGRAM Registration No HR-26-FB8-8239 Insurance To 28 Mar, 2027 23:59",
+          "source": "ocr"
+        }
+      ],
+      "note": "State code and district number of the registration mark"
+    },
+    "rtoLocation": {
+      "value": "GURGAON",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "HARYANA 122002 GURUGRAM PINCODE - 122002 GURGAON |RTO GURGAON Issuance Date 26/03/2026",
+          "source": "ocr"
+        }
+      ]
+    },
+    "state": {
+      "value": "Haryana",
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "TECH PARKA 2 UNIT 12 {URGAON GURUGRAM Registration No HR-26-FB8-8239 Insurance To 28 Mar, 2027 23:59",
+          "source": "ocr"
+        }
+      ],
+      "note": "State of registration code HR"
+    },
+    "ncbPercent": {
+      "value": 35,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Less: No Claim Bonus (35%) 852 | LL for Employees of Insured (for 7 Persons) (IMT-29) 350",
+          "source": "ocr"
+        }
+      ]
+    },
+    "covers": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Not extracted"
+    },
+    "gwpSlab": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Broker business volume, not printed on a policy; asked only when a grid is slab-based"
+    },
+    "policyStart": {
+      "value": "2026-03-29",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "From 29/03/2026 To 28/03/2027 741150 oo [ oo | oo | 0 | 741150",
+          "source": "ocr"
+        }
+      ]
+    },
+    "policyEnd": {
+      "value": "2027-03-28",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "From 29/03/2026 To 28/03/2027 741150 oo [ oo | oo | 0 | 741150",
+          "source": "ocr"
+        }
+      ]
+    },
+    "premium": {
+      "netOd": {
+        "value": 8053,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 1,
+            "quote": "Net Own Damage Premium (a) 8053 | Total Premium 14005",
+            "source": "ocr"
+          }
+        ]
+      },
+      "netTp": {
+        "value": 3816,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 1,
+            "quote": "Total - Less 852 | Net Liability Premium (b) 3816",
+            "source": "ocr"
+          }
+        ]
+      },
+      "netPremium": {
+        "value": 11869,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 1,
+            "quote": "Add on Coverages Total Package Premium (a+b) 11869",
+            "source": "ocr"
+          }
+        ]
+      },
+      "gst": {
+        "value": 2136,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 1,
+            "quote": "Zero Depreciation (IRDAN125A0021V01201415) 1853 | Integrated Tax 18% 2136",
+            "source": "ocr"
+          }
+        ]
+      },
+      "total": {
+        "value": 14005,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 1,
+            "quote": "Net Own Damage Premium (a) 8053 | Total Premium 14005",
+            "source": "ocr"
+          }
+        ]
+      }
+    }
+  },
+  "result": {
+    "status": "ambiguous",
+    "insurer": "hdfc-ergo",
+    "grid": {
+      "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+      "label": "HDFC ERGO private car grid (Pvt Car New Grid Eff 1st Feb'25)",
+      "effective": "from 2025-02-01 (no end date printed)"
+    },
+    "od": {
+      "applicability": "ambiguous",
+      "ratePercent": null,
+      "appliesTo": "Net own-damage premium (incl. add-ons)",
+      "premiumBase": 8053,
+      "expectedBrokerage": null,
+      "reason": "HDFC ERGO Package rate on the own-damage premium.",
+      "citations": [
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": "<10k",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "15.00%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab <10k"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": "<10k",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "15.00%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab <10k"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">10-50k",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "17.50%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >10-50k"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">10-50k",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "17.50%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab >10-50k"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">50k-1L",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "20.00%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >50k-1L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">50k-1L",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "20.00%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab >50k-1L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">1L-2L",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "22.00%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >1L-2L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">1L-2L",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "22.00%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab >1L-2L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">2L",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "23.00%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >2L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">2L",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "23.00%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab >2L"
+        }
+      ],
+      "candidates": [
+        {
+          "ratePercent": 15,
+          "assumption": "GWP slab <10k",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": "<10k",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "15.00%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab <10k"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": "<10k",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "15.00%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab <10k"
+            }
+          ]
+        },
+        {
+          "ratePercent": 17.5,
+          "assumption": "GWP slab >10-50k",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">10-50k",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "17.50%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >10-50k"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">10-50k",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "17.50%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab >10-50k"
+            }
+          ]
+        },
+        {
+          "ratePercent": 20,
+          "assumption": "GWP slab >50k-1L",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">50k-1L",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "20.00%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >50k-1L"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">50k-1L",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "20.00%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab >50k-1L"
+            }
+          ]
+        },
+        {
+          "ratePercent": 22,
+          "assumption": "GWP slab >1L-2L",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">1L-2L",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "22.00%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >1L-2L"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">1L-2L",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "22.00%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab >1L-2L"
+            }
+          ]
+        },
+        {
+          "ratePercent": 23,
+          "assumption": "GWP slab >2L",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">2L",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "23.00%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >2L"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">2L",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "23.00%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab >2L"
+            }
+          ]
+        }
+      ]
+    },
+    "tp": {
+      "applicability": "ambiguous",
+      "ratePercent": null,
+      "appliesTo": "Net liability premium",
+      "premiumBase": 3816,
+      "expectedBrokerage": null,
+      "reason": "Package rate applied to the liability premium of the package.",
+      "citations": [
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": "<10k",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "15.00%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab <10k"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": "<10k",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "15.00%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab <10k"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">10-50k",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "17.50%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >10-50k"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">10-50k",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "17.50%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab >10-50k"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">50k-1L",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "20.00%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >50k-1L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">50k-1L",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "20.00%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab >50k-1L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">1L-2L",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "22.00%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >1L-2L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">1L-2L",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "22.00%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab >1L-2L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">2L",
+          "column": "Package / Petrol / NCB & N-NCB",
+          "value": "23.00%",
+          "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >2L"
+        },
+        {
+          "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "page": 1,
+          "table": "Zone 2 rates",
+          "row": ">2L",
+          "column": "Package / Non-Petrol / NCB",
+          "value": "23.00%",
+          "label": "Zone 2 · Package / Non-Petrol / NCB · slab >2L"
+        }
+      ],
+      "candidates": [
+        {
+          "ratePercent": 15,
+          "assumption": "GWP slab <10k",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": "<10k",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "15.00%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab <10k"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": "<10k",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "15.00%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab <10k"
+            }
+          ]
+        },
+        {
+          "ratePercent": 17.5,
+          "assumption": "GWP slab >10-50k",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">10-50k",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "17.50%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >10-50k"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">10-50k",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "17.50%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab >10-50k"
+            }
+          ]
+        },
+        {
+          "ratePercent": 20,
+          "assumption": "GWP slab >50k-1L",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">50k-1L",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "20.00%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >50k-1L"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">50k-1L",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "20.00%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab >50k-1L"
+            }
+          ]
+        },
+        {
+          "ratePercent": 22,
+          "assumption": "GWP slab >1L-2L",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">1L-2L",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "22.00%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >1L-2L"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">1L-2L",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "22.00%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab >1L-2L"
+            }
+          ]
+        },
+        {
+          "ratePercent": 23,
+          "assumption": "GWP slab >2L",
+          "citations": [
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">2L",
+              "column": "Package / Petrol / NCB & N-NCB",
+              "value": "23.00%",
+              "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >2L"
+            },
+            {
+              "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+              "page": 1,
+              "table": "Zone 2 rates",
+              "row": ">2L",
+              "column": "Package / Non-Petrol / NCB",
+              "value": "23.00%",
+              "label": "Zone 2 · Package / Non-Petrol / NCB · slab >2L"
+            }
+          ]
+        }
+      ]
+    },
+    "confidence": {
+      "level": "medium",
+      "reason": "Needs: gwpSlab. Interpretation: the single Package rate is applied to both OD and TP."
+    },
+    "summary": "OD ambiguous (15% / 17.5% / 20% / 22% / 23%); TP ambiguous (15% / 17.5% / 20% / 22% / 23%).",
+    "trace": [
+      {
+        "title": "Read the document",
+        "detail": "9 page(s), 32238 characters; 9 page(s) read by OCR (no text layer).",
+        "outcome": "ok"
+      },
+      {
+        "title": "Identify the insurer",
+        "detail": "HDFC ERGO (score 0.95): p1 \"HDFC ERGO General Insurance Company Limited\".",
+        "outcome": "ok"
+      },
+      {
+        "title": "Recover faint fields",
+        "detail": "The plain OCR pass missed registrationNumber; read from a contrast-enhanced OCR pass of the same pages.",
+        "outcome": "ok"
+      },
+      {
+        "title": "Check the grid is in force",
+        "citations": [
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Header",
+            "value": "Effective from 1st Feb'25",
+            "label": "Grid effective date"
+          }
+        ],
+        "detail": "Grid effective from 2025-02-01 with no end date; policy starts 2026-03-29, more than a year later, so a newer HDFC ERGO grid may apply. None is in the corpus, so this one is used.",
+        "outcome": "warn"
+      },
+      {
+        "title": "Policy type to grid category",
+        "detail": "package (p1 \": : PRIVATE CAR COMPREHENSIVE POLICY\") → Package columns.",
+        "citations": [
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 1 rates",
+            "row": "Header",
+            "column": "Category",
+            "value": "Package | SAOD",
+            "label": "The grid publishes Package and SAOD categories only"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Registration to zone",
+        "detail": "RTO HR-26 (p1 \"TECH PARKA 2 UNIT 12 {URGAON GURUGRAM Registration No HR-26-FB8-8239 Insurance T\") → Haryana → Zone 2.",
+        "citations": [
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 2,
+            "table": "State to zone mapping",
+            "row": "Haryana",
+            "column": "Zone-2",
+            "value": "Haryana",
+            "label": "Haryana is in Zone 2"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Fuel to Petrol / Non-Petrol grid",
+        "detail": "Fuel not printed (The schedule prints no fuel type, and the model name has no fuel word); both Petrol and Non-Petrol columns are considered.",
+        "citations": [
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Footnotes",
+            "row": "nonPetrol",
+            "value": "*Non Petrol includes Diesel, CNG, LPG",
+            "label": "Non Petrol includes Diesel, CNG, LPG"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Footnotes",
+            "row": "evHybrid",
+            "value": "# EV and Hybrid is to be considered in Petrol Grid",
+            "label": "EV and Hybrid use the Petrol grid"
+          }
+        ],
+        "outcome": "warn"
+      },
+      {
+        "title": "NCB column",
+        "detail": "NCB 35% (p1 \"Less: No Claim Bonus (35%) 852 | LL for Employees of Insured (for 7 Persons) (IM\") (rollover) → NCB.",
+        "outcome": "ok"
+      },
+      {
+        "title": "GWP slab",
+        "detail": "The footnote computes the slab on \"comprehensive + SAOD GWP\" for \"slab achievement\": an aggregate of the broker's private-car book, not a figure printed on one policy (a policy is never both comprehensive and SAOD). All five slabs stay open; this policy's own net premium (₹11869) is not the slab basis.",
+        "citations": [
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Footnotes",
+            "row": "slab",
+            "value": "Slab will be calculated basis comprehensive + SAOD GWP on PVT CAR (SATP premium is excluded for slab achievement)",
+            "label": "The slab is the broker's comprehensive + SAOD private-car GWP, SATP excluded"
+          }
+        ],
+        "outcome": "warn"
+      },
+      {
+        "title": "Look up the rate",
+        "detail": "The rate depends on GWP slab: 15% / 17.5% / 20% / 22% / 23%. Unknown fuel does not change it - the candidate cells are equal.",
+        "citations": [
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": "<10k",
+            "column": "Package / Petrol / NCB & N-NCB",
+            "value": "15.00%",
+            "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab <10k"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": ">10-50k",
+            "column": "Package / Petrol / NCB & N-NCB",
+            "value": "17.50%",
+            "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >10-50k"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": ">50k-1L",
+            "column": "Package / Petrol / NCB & N-NCB",
+            "value": "20.00%",
+            "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >50k-1L"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": ">1L-2L",
+            "column": "Package / Petrol / NCB & N-NCB",
+            "value": "22.00%",
+            "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >1L-2L"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": ">2L",
+            "column": "Package / Petrol / NCB & N-NCB",
+            "value": "23.00%",
+            "label": "Zone 2 · Package / Petrol / NCB & N-NCB · slab >2L"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": "<10k",
+            "column": "Package / Non-Petrol / NCB",
+            "value": "15.00%",
+            "label": "Zone 2 · Package / Non-Petrol / NCB · slab <10k"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": ">10-50k",
+            "column": "Package / Non-Petrol / NCB",
+            "value": "17.50%",
+            "label": "Zone 2 · Package / Non-Petrol / NCB · slab >10-50k"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": ">50k-1L",
+            "column": "Package / Non-Petrol / NCB",
+            "value": "20.00%",
+            "label": "Zone 2 · Package / Non-Petrol / NCB · slab >50k-1L"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": ">1L-2L",
+            "column": "Package / Non-Petrol / NCB",
+            "value": "22.00%",
+            "label": "Zone 2 · Package / Non-Petrol / NCB · slab >1L-2L"
+          },
+          {
+            "file": "raters/hdfc-ergo/feb-2025/Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+            "page": 1,
+            "table": "Zone 2 rates",
+            "row": ">2L",
+            "column": "Package / Non-Petrol / NCB",
+            "value": "23.00%",
+            "label": "Zone 2 · Package / Non-Petrol / NCB · slab >2L"
+          }
+        ],
+        "outcome": "warn"
+      },
+      {
+        "title": "Premium base",
+        "detail": "The grid prints one Package rate with no OD/TP split, so it is applied to the whole package premium: OD ₹8053 and TP ₹3816 alike (GST excluded).",
+        "outcome": "warn"
+      }
+    ],
+    "questions": [
+      {
+        "fact": "gwpSlab",
+        "question": "Which GWP slab has the broker achieved with HDFC ERGO on private car (comprehensive + SAOD premium, SATP excluded)?",
+        "options": [
+          {
+            "value": "<10k",
+            "label": "<10k"
+          },
+          {
+            "value": ">10-50k",
+            "label": ">10-50k"
+          },
+          {
+            "value": ">50k-1L",
+            "label": ">50k-1L"
+          },
+          {
+            "value": ">1L-2L",
+            "label": ">1L-2L"
+          },
+          {
+            "value": ">2L",
+            "label": ">2L"
+          }
+        ]
+      }
+    ]
+  }
+}

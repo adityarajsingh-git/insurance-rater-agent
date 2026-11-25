@@ -1,0 +1,587 @@
+{
+  "engineVersion": "1.0.0",
+  "facts": {
+    "insurerName": {
+      "value": "Go Digit General Insurance Ltd.",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Go Digit General Insurance Ltd. Schedule/Certificate",
+          "source": "ocr"
+        }
+      ]
+    },
+    "insurer": {
+      "value": "godigit",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Go Digit General Insurance Ltd. Schedule/Certificate",
+          "source": "ocr"
+        }
+      ]
+    },
+    "policyType": {
+      "value": "satp",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Digit Private Car Liability Only Policy UIN No.: IRDAN158RP0002V01201718",
+          "source": "ocr"
+        }
+      ]
+    },
+    "businessType": {
+      "value": "renewal",
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Previous Insurer Go Digit General Insurance Limited",
+          "source": "ocr"
+        }
+      ],
+      "note": "The previous insurer is Go Digit, the same as the current insurer, so renewal (challenge rule)"
+    },
+    "previousInsurer": {
+      "value": "Go Digit General Insurance Limited",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Previous Insurer Go Digit General Insurance Limited",
+          "source": "ocr"
+        }
+      ]
+    },
+    "make": {
+      "value": "HYUNDAI",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Make HYUNDAI Model/Vehicle Variant (Sub-Type) SANTRO NEW/1.1MT CORPORATE",
+          "source": "ocr"
+        }
+      ]
+    },
+    "model": {
+      "value": "SANTRO NEW/1.1MT CORPORATE",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Make HYUNDAI Model/Vehicle Variant (Sub-Type) SANTRO NEW/1.1MT CORPORATE",
+          "source": "ocr"
+        }
+      ]
+    },
+    "fuel": {
+      "value": "petrol",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Fuel Type Petrol Year of Mfg. 0001-01-01 Year of Regn. 2019",
+          "source": "ocr"
+        }
+      ]
+    },
+    "cngLpgKit": {
+      "value": false,
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "PA cover for 5 passengers 0 [) -- TP for Bi-fuel kit (’) )",
+          "source": "ocr"
+        }
+      ],
+      "note": "The \"TP for Bi-fuel kit\" line carries no premium, so no CNG/LPG kit is covered"
+    },
+    "cc": {
+      "value": 1086,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Engine No. Chassis No. Cubic Capacity 1086 CC",
+          "source": "ocr"
+        }
+      ]
+    },
+    "seats": {
+      "value": 5,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "RTO Location Kanpur Nagar UTTAR PRADESH Capacity 5",
+          "source": "ocr"
+        }
+      ]
+    },
+    "manufactureYear": {
+      "value": null,
+      "status": "missing",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Fuel Type Petrol Year of Mfg. 0001-01-01 Year of Regn. 2019",
+          "source": "ocr"
+        }
+      ],
+      "note": "Year of Mfg. prints \"0001-01-01\", a placeholder rather than a year"
+    },
+    "registrationDate": {
+      "value": null,
+      "status": "missing",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Fuel Type Petrol Year of Mfg. 0001-01-01 Year of Regn. 2019",
+          "source": "ocr"
+        }
+      ],
+      "note": "Only the registration year (2019) is printed"
+    },
+    "vehicleAgeYears": {
+      "value": null,
+      "status": "ambiguous",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Fuel Type Petrol Year of Mfg. 0001-01-01 Year of Regn. 2019",
+          "source": "ocr"
+        },
+        {
+          "page": 1,
+          "quote": "From 25-Mar-2026",
+          "source": "ocr"
+        }
+      ],
+      "note": "Only the registration year 2019 is printed: at the 2026-03-25 start the vehicle is 6 or 7 whole years old, depending on the month",
+      "candidates": [
+        6,
+        7
+      ]
+    },
+    "registrationNumber": {
+      "value": "UP78FZ1372",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "REENA KUMAR UP78FZ1372",
+          "source": "ocr"
+        }
+      ],
+      "note": "The labelled field is blank in this text; read from the line that repeats the insured name and registration number"
+    },
+    "rtoCode": {
+      "value": "UP-78",
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "REENA KUMAR UP78FZ1372",
+          "source": "ocr"
+        }
+      ],
+      "note": "RTO code taken from registration number UP78FZ1372"
+    },
+    "rtoLocation": {
+      "value": "Kanpur Nagar UTTAR PRADESH",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "RTO Location Kanpur Nagar UTTAR PRADESH Capacity 5",
+          "source": "ocr"
+        }
+      ]
+    },
+    "state": {
+      "value": "Uttar Pradesh",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "RTO Location Kanpur Nagar UTTAR PRADESH Capacity 5",
+          "source": "ocr"
+        }
+      ]
+    },
+    "ncbPercent": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Liability-only policy: no own-damage section, so no NCB is printed"
+    },
+    "covers": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Not extracted"
+    },
+    "gwpSlab": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Broker business volume, not printed on a policy; asked only when a grid is slab-based"
+    },
+    "policyStart": {
+      "value": "2026-03-25",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "From 25-Mar-2026",
+          "source": "ocr"
+        }
+      ]
+    },
+    "policyEnd": {
+      "value": "2027-03-24",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "To 24-Mar-2027",
+          "source": "ocr"
+        }
+      ]
+    },
+    "premium": {
+      "netOd": {
+        "value": null,
+        "status": "missing",
+        "evidence": [],
+        "note": "Liability-only policy: there is no own-damage premium"
+      },
+      "netTp": {
+        "value": 3416,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "Basic Third-Party Liability () 3416.00 PA cover for Owner-Driver (’) =",
+            "source": "ocr"
+          }
+        ],
+        "note": "Basic TP (the \"Basic Third-Party Liability\" line), the base the Go Digit TP rate is applied to; other liability lines such as LL to paid driver are only in Net Premium"
+      },
+      "netPremium": {
+        "value": 3466,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "Net Premium 3466.00",
+            "source": "ocr"
+          }
+        ]
+      },
+      "gst": {
+        "value": 623.88,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "CGST @ 9% = (3311.94) + SGST/UTGST @ 9% = (3311.94) 623.88",
+            "source": "ocr"
+          }
+        ],
+        "note": "Total GST (last amount on the CGST + SGST line)"
+      },
+      "total": {
+        "value": 4089.88,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "Final Premium () 4089.88",
+            "source": "ocr"
+          }
+        ]
+      }
+    }
+  },
+  "result": {
+    "status": "resolved",
+    "insurer": "godigit",
+    "grid": {
+      "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+      "label": "Go Digit - Large Insurance Brokers grid, Mar'26",
+      "effective": "2026-03-01 to 2026-03-31 (March 2026 (Mar'26 workbook; no end date is stated, so 1-31 Mar 2026 is assumed))"
+    },
+    "od": {
+      "applicability": "not_applicable",
+      "ratePercent": null,
+      "appliesTo": "OD premium",
+      "premiumBase": null,
+      "expectedBrokerage": null,
+      "reason": "Stand-alone TP policy: there is no own-damage premium, and '4W SATP' has no OD column.",
+      "citations": [
+        {
+          "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "sheet": "4W SATP",
+          "cell": "B2:F2",
+          "value": "Cluster | Segment | Age | Max CD2 | Note",
+          "label": "Sheet header: no OD column; E = Max CD2 (TP rate)"
+        }
+      ]
+    },
+    "tp": {
+      "applicability": "applicable",
+      "ratePercent": 29.5,
+      "appliesTo": "Basic TP premium (Basic Third-Party Liability, excl. GST)",
+      "premiumBase": 3416,
+      "expectedBrokerage": 1007.72,
+      "reason": "'4W SATP'!E293 (UP_Bad | Petrol>1000 | All) = 29.5% (Max CD2, cluster UP_Bad for RTO UP78).",
+      "citations": [
+        {
+          "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "sheet": "4W  RTO",
+          "cell": "B1609",
+          "value": "UP78",
+          "label": "RTO code"
+        },
+        {
+          "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "sheet": "4W  RTO",
+          "cell": "C1609",
+          "value": "UP_Bad",
+          "label": "4WTP cluster (header C2 = 4WTP)"
+        },
+        {
+          "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "sheet": "4W SATP",
+          "cell": "B293",
+          "value": "UP_Bad",
+          "label": "Cluster label"
+        },
+        {
+          "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "sheet": "4W SATP",
+          "cell": "C293",
+          "value": "Petrol>1000",
+          "label": "Segment (fuel and cc band)"
+        },
+        {
+          "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "sheet": "4W SATP",
+          "cell": "D293",
+          "value": "All",
+          "label": "Age band"
+        },
+        {
+          "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "sheet": "4W SATP",
+          "cell": "E293",
+          "value": 0.295,
+          "label": "Max CD2 (TP rate) 29.5%"
+        }
+      ]
+    },
+    "confidence": {
+      "level": "medium",
+      "reason": "No CNG/LPG kit was derived: The \"TP for Bi-fuel kit\" line carries no premium, so no CNG/LPG kit is covered."
+    },
+    "summary": "OD not applicable; TP 29.5% on Basic TP premium (Basic Third-Party Liability, excl. GST).",
+    "trace": [
+      {
+        "title": "Read the document",
+        "detail": "4 page(s), 11060 characters; 4 page(s) read by OCR (no text layer).",
+        "outcome": "ok"
+      },
+      {
+        "title": "Identify the insurer",
+        "detail": "Go Digit General Insurance (score 1.00): p1 \"Go Digit General Insurance Ltd. Schedule/Certificate\"; p1 \"Go Digit General Insurance Ltd.| GST Reg No 09AACCO4128Q17Y| PAN No:- AACCO4128Q| HSN: 997134/General Insurance Services| Website: www.godigit.com/general-insurance\"; p1 \"Digit Private Car Liability Only Policy UIN No.: IRDAN158RP0002V01201718\".",
+        "outcome": "ok"
+      },
+      {
+        "title": "Grid and validity",
+        "detail": "Go Digit policy -> raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx (sha256 6efb7ca43e7d). Effective 2026-03-01 to 2026-03-31: March 2026 (Mar'26 workbook; no end date is stated, so 1-31 Mar 2026 is assumed). The policy starts 2026-03-25, inside the window.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "School & Staff Bus ",
+            "cell": "B2",
+            "value": "Applicable from 1st of Mar, 2026",
+            "label": "Evidence for the effective period"
+          },
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "CV Grid (excl. HCV)",
+            "cell": "G2",
+            "value": "Digit_FY 25-26 SATP",
+            "label": "Evidence for the effective period"
+          }
+        ]
+      },
+      {
+        "title": "Sheet",
+        "detail": "Liability-only (SATP) private car -> '4W SATP'. 'TW 1+1 & SATP' is a two-wheeler sheet and is not used.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W SATP",
+            "cell": "B2:F2",
+            "value": "Cluster | Segment | Age | Max CD2 | Note",
+            "label": "Sheet header: no OD column; E = Max CD2 (TP rate)"
+          }
+        ]
+      },
+      {
+        "title": "RTO code",
+        "detail": "Registration number UP78FZ1372 -> UP78, found at '4W  RTO'!B1609.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W  RTO",
+            "cell": "B1609",
+            "value": "UP78",
+            "label": "RTO code"
+          }
+        ]
+      },
+      {
+        "title": "Location cross-check",
+        "detail": "'CV RTO Mapping' row 1807: UP78 = KANPUR, UTTAR PRADESH. The printed RTO location \"Kanpur Nagar UTTAR PRADESH\" agrees.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "CV RTO Mapping",
+            "cell": "A1807:C1807",
+            "value": "UP78 | UTTAR PRADESH | KANPUR",
+            "label": "RTO code, state and city in the CV RTO map"
+          }
+        ]
+      },
+      {
+        "title": "Cluster",
+        "detail": "'4W  RTO'!C1609 (4WTP) = UP_Bad.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W  RTO",
+            "cell": "B1609",
+            "value": "UP78",
+            "label": "RTO code"
+          },
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W  RTO",
+            "cell": "C1609",
+            "value": "UP_Bad",
+            "label": "4WTP cluster (header C2 = 4WTP)"
+          }
+        ]
+      },
+      {
+        "title": "Cluster rows",
+        "detail": "UP_Bad -> '4W SATP' label(s) \"UP_Bad\": rows 289, 290, 291, 292, 293.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W SATP",
+            "cell": "B289:B293",
+            "value": "UP_Bad",
+            "label": "Rows of the cluster: 289, 290, 291, 292, 293"
+          }
+        ]
+      },
+      {
+        "title": "Unknown facts",
+        "detail": "Not known exactly: vehicle age. All 2 possible combinations give the same result, so they do not change the answer.",
+        "outcome": "ok"
+      },
+      {
+        "title": "Segment",
+        "detail": "Petrol, no CNG/LPG kit, 1086 cc -> 'Petrol>1000' (row 293).",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W SATP",
+            "cell": "C293",
+            "value": "Petrol>1000",
+            "label": "Segment (fuel and cc band)"
+          }
+        ]
+      },
+      {
+        "title": "Age",
+        "detail": "D293 = All, so the vehicle age (6 or 7 years) is not needed.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W SATP",
+            "cell": "D293",
+            "value": "All",
+            "label": "Age band"
+          }
+        ]
+      },
+      {
+        "title": "Notes and declines",
+        "detail": "Cluster UP_Bad is not All_India_Decline, F293 is empty, and no other column-F note covers this cluster and segment.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W SATP",
+            "cell": "F293",
+            "value": null,
+            "label": "Note column"
+          }
+        ]
+      },
+      {
+        "title": "Rate",
+        "detail": "'4W SATP'!E293 (Max CD2) = 0.295 -> TP 29.5%.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W SATP",
+            "cell": "E293",
+            "value": 0.295,
+            "label": "Max CD2 (TP rate) 29.5%"
+          }
+        ]
+      },
+      {
+        "title": "Premium base (open question)",
+        "detail": "The grid does not say which premium the TP rate applies to: basic TP (Rs 3416.00) or the net liability premium (Rs 3466.00, which adds lines such as LL to paid driver). Following the spec, the rate is applied to basic TP, excluding GST -> Rs 1007.72. This does not change the rate.",
+        "outcome": "warn"
+      },
+      {
+        "title": "OD",
+        "detail": "Stand-alone TP policy: there is no own-damage premium, and '4W SATP' has no OD column.",
+        "outcome": "ok",
+        "citations": [
+          {
+            "file": "raters/godigit/march-2026/Large Insurance Brokers Mar'26 - Shared.xlsx",
+            "sheet": "4W SATP",
+            "cell": "B2:F2",
+            "value": "Cluster | Segment | Age | Max CD2 | Note",
+            "label": "Sheet header: no OD column; E = Max CD2 (TP rate)"
+          }
+        ]
+      }
+    ],
+    "questions": []
+  }
+}

@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  node_bundler = "esbuild"
+  # The engine imports src/data/grids/*.json with plain ES imports, so esbuild bundles them.
+  # If it ever reads files at runtime instead, list them here, e.g. included_files = ["src/data/grids/**"].

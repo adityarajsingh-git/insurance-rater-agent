@@ -1,0 +1,38 @@
+{
+  "name": "insurance-rater-agent",
+  "version": "1.0.0",
+  "description": "Explainable insurance-rater agent: reads a motor policy PDF and returns the broker commission (OD/TP) with cell-level citations.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc -p . --noEmit",
+    "traces": "tsx scripts/traces.ts",
+    "grids": "for g in godigit reliance hdfc-ergo tata-aig; do tsx scripts/grids/$g.ts || exit 1; done"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@netlify/functions": "^6.1.2",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.11",
+    "pdfjs-dist": "^6.5.438",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tesseract.js": "^7.0.0"
+  },
+  "type": "module",
+  "private": true
+}

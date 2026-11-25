@@ -1,0 +1,713 @@
+{
+  "engineVersion": "1.0.0",
+  "facts": {
+    "insurerName": {
+      "value": "Reliance General Insurance Company Limited",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Reliance General Insurance Company Limited. IRDAI Registration No. 103 An ISO 9001:2015 Certified Company",
+          "source": "ocr"
+        }
+      ]
+    },
+    "insurer": {
+      "value": "reliance",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Reliance General Insurance Company Limited. IRDAI Registration No. 103 An ISO 9001:2015 Certified Company",
+          "source": "ocr"
+        }
+      ]
+    },
+    "policyType": {
+      "value": "package",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Reliance Private Car Package Policy- Schedule",
+          "source": "ocr"
+        },
+        {
+          "page": 9,
+          "quote": "Reliance Private Car Package Policy - Proposal Form",
+          "source": "ocr"
+        },
+        {
+          "page": 5,
+          "quote": "Standard Vehicle Own Damage + Third Party Coverage",
+          "source": "ocr"
+        }
+      ]
+    },
+    "businessType": {
+      "value": "renewal",
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "44. Full Name of previous insurer Reliance General Insurance Company Ltd.",
+          "source": "ocr"
+        },
+        {
+          "page": 13,
+          "quote": "46. Policy Number 130422423110152540 Previous Policy Expiry 22-Dec-25",
+          "source": "ocr"
+        }
+      ],
+      "note": "The previous insurer is Reliance General, the same insurer as this policy, so it is a renewal."
+    },
+    "previousInsurer": {
+      "value": "Reliance General Insurance Company Ltd",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "44. Full Name of previous insurer Reliance General Insurance Company Ltd.",
+          "source": "ocr"
+        }
+      ]
+    },
+    "make": {
+      "value": "RENAULT",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Make / Model & Variant RENAULT KWID 1.0 RXT O CC/HP 999",
+          "source": "ocr"
+        }
+      ]
+    },
+    "model": {
+      "value": "KWID 1.0 RXT O",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Make / Model & Variant RENAULT KWID 1.0 RXT O CC/HP 999",
+          "source": "ocr"
+        }
+      ]
+    },
+    "fuel": {
+      "value": "petrol",
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Make / Model & Variant RENAULT KWID 1.0 RXT O CC/HP 999",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Vehicle IDV ¥ 263,250.00 CNG / LPG Kit ¥ 0.00",
+          "source": "ocr"
+        }
+      ],
+      "note": "Fuel is not printed on the policy. Derived: RENAULT KWID 1.0 RXT O has no diesel or EV variant in India, and the CNG / LPG kit IDV is 0.00, so no bi-fuel kit is declared."
+    },
+    "cngLpgKit": {
+      "value": false,
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Vehicle IDV ¥ 263,250.00 CNG / LPG Kit ¥ 0.00",
+          "source": "ocr"
+        }
+      ],
+      "note": "CNG / LPG kit IDV is 0.00, so no kit is declared."
+    },
+    "cc": {
+      "value": 999,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Make / Model & Variant RENAULT KWID 1.0 RXT O CC/HP 999",
+          "source": "ocr"
+        },
+        {
+          "page": 5,
+          "quote": "Type of Body NA CC/HP/Wat 999",
+          "source": "ocr"
+        },
+        {
+          "page": 9,
+          "quote": "16. Year & Month of Manufacture OCT-2020 17. Cubic Capacity 999",
+          "source": "ocr"
+        }
+      ]
+    },
+    "seats": {
+      "value": 5,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Engine No. / Chassis No. B4DA416E029716 MEEBBAOMEEBBAOO5SLB744759 Seating Capacity Including Driver 5",
+          "source": "ocr"
+        }
+      ]
+    },
+    "manufactureYear": {
+      "value": 2020,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Registration No. UP16CS5830 Mfg. Month & Year OCT-2020",
+          "source": "ocr"
+        }
+      ]
+    },
+    "registrationDate": {
+      "value": "2020-12-24",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Make / Model & Variant RENAULT KWID 1.0 RXT O Date of Registration 24-Dec-2020",
+          "source": "ocr"
+        }
+      ]
+    },
+    "vehicleAgeYears": {
+      "value": 4,
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Make / Model & Variant RENAULT KWID 1.0 RXT O Date of Registration 24-Dec-2020",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "From 00:00 Hrs on 23-Dec-2025 to Midnight of 22-Dec-2026",
+          "source": "ocr"
+        }
+      ],
+      "note": "Whole years from registration (2020-12-24) to policy start (2025-12-23)."
+    },
+    "registrationNumber": {
+      "value": "UP16CS5830",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Registration No. UP16CS5830 Mfg. Month & Year OCT-2020",
+          "source": "ocr"
+        }
+      ]
+    },
+    "rtoCode": {
+      "value": "UP-16",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Registration No. UP16CS5830 Mfg. Month & Year OCT-2020",
+          "source": "ocr"
+        }
+      ],
+      "note": "State and district part of the registration mark."
+    },
+    "rtoLocation": {
+      "value": "UTTAR PRADESH - Noida",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "RTO Location UTTAR PRADESH - Noida Total Premium X 8,535.00",
+          "source": "ocr"
+        }
+      ]
+    },
+    "state": {
+      "value": "Uttar Pradesh",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "RTO Location UTTAR PRADESH - Noida Total Premium X 8,535.00",
+          "source": "ocr"
+        }
+      ]
+    },
+    "ncbPercent": {
+      "value": 25,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Deduct 25 % for NCB -350.01 Total PA Premium 375.00",
+          "source": "ocr"
+        }
+      ]
+    },
+    "covers": {
+      "value": [
+        "Nil Depreciation",
+        "Consumable Expenses",
+        "Engine Protector",
+        "Loss of Personal Belongings",
+        "Key Protect cover",
+        "Emergency Medical Assistance",
+        "Assistance cover- 24/7 RSA",
+        "Compulsory PA cover to Owner Driver"
+      ],
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Add on Cover/s Opted TOTAL LIABILITY PREMIUM 2,519.00",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Nil Depreciation IGST (@18%) 1302.00",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Consumable Expenses",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Engine Protector",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Loss of Personal Belongings",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Key Protect cover",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Emergency Medical Assistance",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Assistance cover- 24/7 RSA",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "Less Compulsory PA cover to Owner Driver 375.00",
+          "source": "ocr"
+        },
+        {
+          "page": 11,
+          "quote": "7. Return to Invoice (Applicable only for Annual Policy) No",
+          "source": "ocr"
+        },
+        {
+          "page": 11,
+          "quote": "8. Tyre Protector( Applicable only for annual Policy) No",
+          "source": "ocr"
+        }
+      ],
+      "note": "Add-ons listed under \"Add on Cover/s Opted\", plus CPA when charged; Tyre Protector / Return to Invoice answers from the proposal form."
+    },
+    "gwpSlab": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Broker business volume, not printed on a policy; asked only when a grid is slab-based"
+    },
+    "policyStart": {
+      "value": "2025-12-23",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "From 00:00 Hrs on 23-Dec-2025 to Midnight of 22-Dec-2026",
+          "source": "ocr"
+        }
+      ]
+    },
+    "policyEnd": {
+      "value": "2026-12-22",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "From 00:00 Hrs on 23-Dec-2025 to Midnight of 22-Dec-2026",
+          "source": "ocr"
+        }
+      ]
+    },
+    "premium": {
+      "netOd": {
+        "value": 4714,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "TOTAL OWN DAMAGE PREMIUM 4,714.00",
+            "source": "ocr"
+          }
+        ]
+      },
+      "netTp": {
+        "value": 2094,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "Total Basic Own Damage Premium 5064.16 Total Basic Liability Premium 2,094.00",
+            "source": "ocr"
+          }
+        ],
+        "note": "Basic TP (Section II). TOTAL LIABILITY PREMIUM also adds the owner-driver PA cover and legal liability to the paid driver, which are not TP premium."
+      },
+      "netPremium": {
+        "value": 7233,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "TOTAL PACKAGE PREMIUM (Sec | +11 + Ill) 7,233.00",
+            "source": "ocr"
+          }
+        ]
+      },
+      "gst": {
+        "value": 1302,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "Nil Depreciation IGST (@18%) 1302.00",
+            "source": "ocr"
+          }
+        ]
+      },
+      "total": {
+        "value": 8535,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 2,
+            "quote": "TOTAL PREMIUM PAYABLE (3) 8,535.00",
+            "source": "ocr"
+          }
+        ]
+      }
+    }
+  },
+  "result": {
+    "status": "resolved",
+    "insurer": "reliance",
+    "grid": {
+      "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "label": "Reliance Broking Premier FEB 26 Grid - PRIVATE CAR COMP, SAOD & STP (Old Business)",
+      "effective": "2026-02-01 to 2026-02-28: FEB '26 (FEB'26 - Grid!A1); the private-car sheet title PRIVATE CAR COMP, SAOD & STP!A1 says Jan-26"
+    },
+    "od": {
+      "applicability": "applicable",
+      "ratePercent": 17.5,
+      "appliesTo": "net OD premium (after NCB, incl. add-ons)",
+      "premiumBase": 4714,
+      "expectedBrokerage": 824.95,
+      "reason": "PC!C11 = 22.5 (Delhi, Petrol/Bifuel/Comp) - 5 points for cc below 1000 (PC!H3, read as percentage points; 5% of the rate would give 21.375%) = 17.5% of the net OD premium (after NCB, incl. add-ons).",
+      "citations": [
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "RTO List",
+          "cell": "A1253",
+          "value": "UP-16",
+          "label": "RTO code UP-16 (matched from UP16CS5830)"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "RTO List",
+          "cell": "C1253",
+          "value": "Delhi",
+          "label": "Region_City of UP-16"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "PRIVATE CAR COMP, SAOD & STP",
+          "cell": "B11",
+          "value": "Delhi",
+          "label": "Grid region row 11"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "PRIVATE CAR COMP, SAOD & STP",
+          "cell": "C11",
+          "value": 22.5,
+          "label": "Base OD rate: Delhi, Petrol/Bifuel/Comp"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "PRIVATE CAR COMP, SAOD & STP",
+          "cell": "H3",
+          "value": "Payout for < 1000 CC, PO will be 5% lesser than the above Grid",
+          "label": "cc below 1000: 5 points less"
+        }
+      ]
+    },
+    "tp": {
+      "applicability": "applicable",
+      "ratePercent": 0,
+      "appliesTo": "basic TP premium",
+      "premiumBase": 2094,
+      "expectedBrokerage": 0,
+      "reason": "PC!H2 \"payout will made on OD Premium\": a package policy earns its payout on the OD premium only, so TP is 0%. PC!F11 (STP) = 0 and FEB'26 - Grid!AR41 (PC STP Non-Diesel) = 0 agree.",
+      "citations": [
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "RTO List",
+          "cell": "A1253",
+          "value": "UP-16",
+          "label": "RTO code UP-16 (matched from UP16CS5830)"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "RTO List",
+          "cell": "C1253",
+          "value": "Delhi",
+          "label": "Region_City of UP-16"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "PRIVATE CAR COMP, SAOD & STP",
+          "cell": "B11",
+          "value": "Delhi",
+          "label": "Grid region row 11"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "PRIVATE CAR COMP, SAOD & STP",
+          "cell": "H2",
+          "value": "payout will made on OD Premium",
+          "label": "Payout on OD premium only: TP 0%"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "PRIVATE CAR COMP, SAOD & STP",
+          "cell": "F11",
+          "value": 0,
+          "label": "STP rate, Delhi"
+        },
+        {
+          "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "sheet": "FEB'26 - Grid",
+          "cell": "AR41",
+          "value": 0,
+          "label": "PC STP Non-Diesel, <1000CC, DELHI"
+        }
+      ]
+    },
+    "confidence": {
+      "level": "medium",
+      "reason": "fuel derived; a grid footnote needed an interpretation call."
+    },
+    "summary": "OD 17.5% on net OD premium (after NCB, incl. add-ons); TP 0% on basic TP premium.",
+    "trace": [
+      {
+        "title": "Read the document",
+        "detail": "15 page(s), 50042 characters; 15 page(s) read by OCR (no text layer).",
+        "outcome": "ok"
+      },
+      {
+        "title": "Identify the insurer",
+        "detail": "Reliance General Insurance (score 0.95): p1 \"Reliance General Insurance Company Limited. IRDAI Registration No. 103 An ISO 9001:2015 Certified Company\"; p3 \"GENERAL | Live Smart reliancegeneral.co.in (x)\"; p1 \"Reliance General Insurance Company Limited. IRDAI Registration No. 103 An ISO 9001:2015 Certified Company\"; p1 \"Your Reliance Private Car Package Policy - network garages. live video streaming.\".",
+        "outcome": "ok"
+      },
+      {
+        "title": "Grid effective period",
+        "detail": "PC = sheet \"PRIVATE CAR COMP, SAOD & STP\". Policy starts 2025-12-23; the grid is for 2026-02-01 to 2026-02-28. The policy date is outside the grid month, so this grid may not be the one that applied when the policy was booked.",
+        "citations": [
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "FEB'26 - Grid",
+            "cell": "A1",
+            "value": "PO Grid for FEB '26 FY 25-26",
+            "label": "Grid month"
+          },
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "A1",
+            "value": "Pvt Car Old Business Grid- Jan-26",
+            "label": "Private-car sheet title"
+          }
+        ],
+        "outcome": "warn"
+      },
+      {
+        "title": "Business type",
+        "detail": "renewal: The previous insurer is Reliance General, the same insurer as this policy, so it is a renewal. PC!A1 \"Pvt Car Old Business Grid- Jan-26\" covers renewals and rollovers alike.",
+        "citations": [
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "A1",
+            "value": "Pvt Car Old Business Grid- Jan-26",
+            "label": "Old Business grid"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Policy type",
+        "detail": "package: OD from column C or D by fuel, TP from PC!H2.",
+        "outcome": "ok"
+      },
+      {
+        "title": "Geography",
+        "detail": "UP16CS5830 -> key UP16 -> RTO List!A1253 UP-16, Region_City Delhi -> PC row 11 \"Delhi\". The RTO List city overrides the registration state.",
+        "citations": [
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "RTO List",
+            "cell": "A1253",
+            "value": "UP-16",
+            "label": "RTO code UP-16 (matched from UP16CS5830)"
+          },
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "RTO List",
+            "cell": "C1253",
+            "value": "Delhi",
+            "label": "Region_City of UP-16"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Fuel",
+        "detail": "petrol -> fuel petrol (column C). Fuel is not printed on the policy. Derived: RENAULT KWID 1.0 RXT O has no diesel or EV variant in India, and the CNG / LPG kit IDV is 0.00, so no bi-fuel kit is declared.",
+        "citations": [
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "C2",
+            "value": "Petrol/Bifuel/Comp",
+            "label": "Column header: Petrol/Bifuel/Comp"
+          }
+        ],
+        "outcome": "warn"
+      },
+      {
+        "title": "Cubic capacity (PC!H3)",
+        "detail": "999 cc is below 1000, so PC!H3 \"Payout for < 1000 CC, PO will be 5% lesser than the above Grid\" applies. Interpretation: read as 5 percentage points off, as every other adjustment in this workbook is in points; 5% of the rate (x 0.95) is the alternative reading.",
+        "citations": [
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "H3",
+            "value": "Payout for < 1000 CC, PO will be 5% lesser than the above Grid",
+            "label": "cc below 1000: 5 points less"
+          }
+        ],
+        "outcome": "warn"
+      },
+      {
+        "title": "Add-on modifiers (PC!H4, PC!H6)",
+        "detail": "No Tyre Protector or Return to Invoice add-on: PC!H6 not applied. Zero depreciation is on a package policy; PC!H4 is read as applying to stand-alone OD only, so it is not applied (the broad reading would take 2.5 points more).",
+        "citations": [
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "H4",
+            "value": "Standlone ZD policies 2.5%will be redused from the above Grid",
+            "label": "Stand-alone OD with zero depreciation"
+          },
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "H6",
+            "value": "Addon Bundle (Tyre / RTI) if Sourced, 2.5% Additional Payout Shall be offered",
+            "label": "Tyre / RTI add-on bundle"
+          }
+        ],
+        "outcome": "warn"
+      },
+      {
+        "title": "TP basis",
+        "detail": "PC!H2 \"payout will made on OD Premium\": a package policy earns its payout on the OD premium only, so TP is 0%. PC!F11 (STP) = 0 and FEB'26 - Grid!AR41 (PC STP Non-Diesel) = 0 agree.",
+        "citations": [
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "RTO List",
+            "cell": "A1253",
+            "value": "UP-16",
+            "label": "RTO code UP-16 (matched from UP16CS5830)"
+          },
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "RTO List",
+            "cell": "C1253",
+            "value": "Delhi",
+            "label": "Region_City of UP-16"
+          },
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "B11",
+            "value": "Delhi",
+            "label": "Grid region row 11"
+          },
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "H2",
+            "value": "payout will made on OD Premium",
+            "label": "Payout on OD premium only: TP 0%"
+          },
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "PRIVATE CAR COMP, SAOD & STP",
+            "cell": "F11",
+            "value": 0,
+            "label": "STP rate, Delhi"
+          },
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "FEB'26 - Grid",
+            "cell": "AR41",
+            "value": 0,
+            "label": "PC STP Non-Diesel, <1000CC, DELHI"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Not grid dimensions",
+        "detail": "Vehicle age (4 years), NCB (25%) and make/model segment (RENAULT KWID 1.0 RXT O) are not dimensions of PC or FEB'26 - Grid!AR:AT, so they do not change the rate.",
+        "outcome": "ok"
+      },
+      {
+        "title": "Hygiene rules (not applied)",
+        "detail": "Enabler, PO Guidelines & T&C!A44:A48 are post-issue claw-backs (premium dishonour, risk-attribute discrepancy, missing CPA, falsified NCB). CPA is on the policy, so A47 (1% deduction without CPA) does not bite.",
+        "citations": [
+          {
+            "file": "raters/reliance-indusind/feb-2026/Reliance Broking Premier  FEB 26 Grid.xlsx",
+            "sheet": "Enabler, PO Guidelines & T&C",
+            "cell": "A47",
+            "value": "3.CPA is mandatoryfor all policies,Else 1% PO shall be deducted from the overall PO.",
+            "label": "CPA mandatory, else 1% deducted"
+          }
+        ],
+        "outcome": "ok"
+      }
+    ],
+    "questions": []
+  }
+}

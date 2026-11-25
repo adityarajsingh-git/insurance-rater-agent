@@ -1,0 +1,854 @@
+{
+  "engineVersion": "1.0.0",
+  "facts": {
+    "insurerName": {
+      "value": "TATA AIG General Insurance Company Limited",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "TATA AIG GENERAL INSURANCE COMPANY LIMITED",
+          "source": "ocr"
+        }
+      ]
+    },
+    "insurer": {
+      "value": "tata-aig",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "CIN: U85110MH2000PLC128425 + Auto Secure - Liability Only Policy + UIN: IRDAN108RP0008V01200001",
+          "source": "ocr"
+        },
+        {
+          "page": 1,
+          "quote": "TATA AIG GENERAL INSURANCE COMPANY LIMITED",
+          "source": "ocr"
+        }
+      ]
+    },
+    "policyType": {
+      "value": "satp",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "CIN: U85110MH2000PLC128425 + Auto Secure - Liability Only Policy + UIN: IRDAN108RP0008V01200001",
+          "source": "ocr"
+        },
+        {
+          "page": 2,
+          "quote": "CIN: U85110MH2000PLC128425 » Auto Secure - Liability Only Policy « UIN: IRDAN108RP0008V01200001",
+          "source": "ocr"
+        },
+        {
+          "page": 3,
+          "quote": "CIN: U85110MH2000PLC128425 » Auto Secure - Liability Only Policy « UIN: IRDAN108RP0008V01200001",
+          "source": "ocr"
+        },
+        {
+          "page": 5,
+          "quote": "Section - | Liability to Third-Parties (A): (Provides coverage for Third-Party damages, including injury or",
+          "source": "ocr"
+        }
+      ]
+    },
+    "businessType": {
+      "value": "renewal",
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Name of the Insurer: TATA AIG GENERAL INSURANCE CO.LTD.",
+          "source": "ocr"
+        },
+        {
+          "page": 11,
+          "quote": "2.Date of Expiry: 30/08/2024",
+          "source": "ocr"
+        }
+      ],
+      "note": "Previous insurer TATA AIG GENERAL INSURANCE CO.LTD. is Tata AIG, the current insurer: renewal. Previous policy expired 2024-08-30, 579 days before this cover starts (break-in)."
+    },
+    "previousInsurer": {
+      "value": "TATA AIG GENERAL INSURANCE CO.LTD.",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Name of the Insurer: TATA AIG GENERAL INSURANCE CO.LTD.",
+          "source": "ocr"
+        }
+      ]
+    },
+    "make": {
+      "value": "MARUTI",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "3. Vehicle Details: MARUTI / ZEN ESTILO / LXI CNG / HATCH BACK",
+          "source": "ocr"
+        }
+      ]
+    },
+    "model": {
+      "value": "ZEN ESTILO",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "3. Vehicle Details: MARUTI / ZEN ESTILO / LXI CNG / HATCH BACK",
+          "source": "ocr"
+        }
+      ],
+      "note": "Variant LXI CNG"
+    },
+    "fuel": {
+      "value": "cng",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "5. Fuel Type: CNG",
+          "source": "ocr"
+        }
+      ]
+    },
+    "cngLpgKit": {
+      "value": true,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Add: CNG / LPG KE TP (MT 29) ow",
+          "source": "ocr"
+        },
+        {
+          "page": 7,
+          "quote": "Subject to: A) IMT Endorsement Number: IMT 25,IMT 22",
+          "source": "ocr"
+        }
+      ],
+      "note": "CNG/LPG kit TP line (IMT 25) on the policy"
+    },
+    "cc": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "CC/KW not legible"
+    },
+    "seats": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Seating capacity not legible"
+    },
+    "manufactureYear": {
+      "value": 2011,
+      "status": "found",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Make / Model / MARUTI / ZEN ESTILO / Mfg. Year 2011",
+          "source": "ocr"
+        }
+      ]
+    },
+    "registrationDate": {
+      "value": "2011-11-02",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Date of Registration 02/11/2011",
+          "source": "ocr"
+        },
+        {
+          "page": 11,
+          "quote": "7. Date of Registration: 02/11/2011",
+          "source": "ocr"
+        }
+      ]
+    },
+    "vehicleAgeYears": {
+      "value": 14,
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Date of Registration 02/11/2011",
+          "source": "ocr"
+        },
+        {
+          "page": 11,
+          "quote": "7. Date of Registration: 02/11/2011",
+          "source": "ocr"
+        },
+        {
+          "page": 1,
+          "quote": "Third-Party Cover 01/04/2026 (00:00 Hrs) 31/03/2027 (Midnight)",
+          "source": "ocr"
+        },
+        {
+          "page": 11,
+          "quote": "*TP Cover Period: 01/04/2026 (00:00 Hrs) to 31/03/2027 (Midnight)",
+          "source": "ocr"
+        }
+      ],
+      "note": "Completed years from registration 2011-11-02 to policy start 2026-04-01"
+    },
+    "registrationNumber": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Registration number not legible in the page text"
+    },
+    "rtoCode": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Registration number not legible, so no RTO code; RTO Location is used instead"
+    },
+    "rtoLocation": {
+      "value": "DELHI",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "RTO Location DELHI No. of Batteries",
+          "source": "ocr"
+        }
+      ]
+    },
+    "state": {
+      "value": "Delhi",
+      "status": "derived",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "RTO Location DELHI No. of Batteries",
+          "source": "ocr"
+        }
+      ],
+      "note": "State named by RTO Location DELHI"
+    },
+    "ncbPercent": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Liability-only policy: NCB applies to OD premium only and none is printed"
+    },
+    "covers": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Not extracted"
+    },
+    "gwpSlab": {
+      "value": null,
+      "status": "missing",
+      "evidence": [],
+      "note": "Broker business volume, not printed on a policy; asked only when a grid is slab-based"
+    },
+    "policyStart": {
+      "value": "2026-04-01",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Third-Party Cover 01/04/2026 (00:00 Hrs) 31/03/2027 (Midnight)",
+          "source": "ocr"
+        },
+        {
+          "page": 11,
+          "quote": "*TP Cover Period: 01/04/2026 (00:00 Hrs) to 31/03/2027 (Midnight)",
+          "source": "ocr"
+        }
+      ]
+    },
+    "policyEnd": {
+      "value": "2027-03-31",
+      "status": "found",
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Third-Party Cover 01/04/2026 (00:00 Hrs) 31/03/2027 (Midnight)",
+          "source": "ocr"
+        },
+        {
+          "page": 11,
+          "quote": "*TP Cover Period: 01/04/2026 (00:00 Hrs) to 31/03/2027 (Midnight)",
+          "source": "ocr"
+        }
+      ]
+    },
+    "premium": {
+      "netOd": {
+        "value": null,
+        "status": "missing",
+        "evidence": [],
+        "note": "Liability-only policy: the schedule has no own-damage section"
+      },
+      "netTp": {
+        "value": 2154,
+        "status": "derived",
+        "evidence": [
+          {
+            "page": 1,
+            "quote": "Premium Amount (Including GST) ¥ 2542",
+            "source": "ocr"
+          },
+          {
+            "page": 5,
+            "quote": "IGST@18% hd 388.00",
+            "source": "ocr"
+          }
+        ],
+        "note": "Liability-only policy: the schedule has only the liability section, so its total equals the net premium"
+      },
+      "netPremium": {
+        "value": 2154,
+        "status": "derived",
+        "evidence": [
+          {
+            "page": 1,
+            "quote": "Premium Amount (Including GST) ¥ 2542",
+            "source": "ocr"
+          },
+          {
+            "page": 5,
+            "quote": "IGST@18% hd 388.00",
+            "source": "ocr"
+          }
+        ],
+        "note": "Net Premium (B) is not legible; derived as total premium 2542 - GST 388"
+      },
+      "gst": {
+        "value": 388,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 5,
+            "quote": "IGST@18% hd 388.00",
+            "source": "ocr"
+          }
+        ]
+      },
+      "total": {
+        "value": 2542,
+        "status": "found",
+        "evidence": [
+          {
+            "page": 1,
+            "quote": "Premium Amount (Including GST) ¥ 2542",
+            "source": "ocr"
+          }
+        ]
+      }
+    }
+  },
+  "result": {
+    "status": "resolved",
+    "insurer": "tata-aig",
+    "grid": {
+      "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+      "label": "Tata AIG Standard Grid (Mar'26), sheet Pvtcar",
+      "effective": "2025-11-01 onwards (Mar'26 communication; Pvtcar!F1: applicable from 1st Nov'25 policies, no end date published)"
+    },
+    "od": {
+      "applicability": "not_applicable",
+      "ratePercent": null,
+      "appliesTo": "OD premium",
+      "premiumBase": null,
+      "expectedBrokerage": null,
+      "reason": "SATP: the policy has no own-damage premium, so there is no OD component (never 0%).",
+      "citations": [
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "F2",
+          "value": "Package/SAOD % on OD Premium; SATP % on Net Premium",
+          "label": "premium basis per section"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "General Guidelines",
+          "cell": "C7",
+          "value": "Payout % for Pvt Car- SATP on Net Premium; Package and SAOD on OD premium",
+          "label": "premium basis per section"
+        }
+      ]
+    },
+    "tp": {
+      "applicability": "applicable",
+      "ratePercent": 38,
+      "appliesTo": "Net premium (before GST, incl. CNG/LPG-kit TP and PA owner-driver)",
+      "premiumBase": 2154,
+      "expectedBrokerage": 818.52,
+      "reason": "38% of Net premium (before GST, incl. CNG/LPG-kit TP and PA owner-driver) (all 7 candidate cells agree).",
+      "citations": [
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "V511",
+          "value": 0.38,
+          "label": "Renewal / Compact / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "V515",
+          "value": 0.38,
+          "label": "Renewal / MPV SUV / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "V519",
+          "value": 0.38,
+          "label": "Renewal / Mid Size / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "V523",
+          "value": 0.38,
+          "label": "Renewal / Ultra High End / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "V527",
+          "value": 0.38,
+          "label": "Renewal / Mini / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "V531",
+          "value": 0.38,
+          "label": "Renewal / High End / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "V535",
+          "value": 0.38,
+          "label": "Renewal / Quadricycle / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "V5",
+          "value": "DELHI",
+          "label": "DELHI header"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "General Guidelines",
+          "cell": "C10",
+          "value": "RTO Cluster identification- for all policies_RTO mapped on policy; for Brand New- If RTO is not available; producer tagged to branch and RTO of that branch to be used",
+          "label": "RTO on the policy decides the location"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "Pvtcar",
+          "cell": "F2",
+          "value": "Package/SAOD % on OD Premium; SATP % on Net Premium",
+          "label": "premium basis per section"
+        },
+        {
+          "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+          "sheet": "General Guidelines",
+          "cell": "C7",
+          "value": "Payout % for Pvt Car- SATP on Net Premium; Package and SAOD on OD premium",
+          "label": "premium basis per section"
+        }
+      ]
+    },
+    "confidence": {
+      "level": "high",
+      "reason": "Every decisive fact was printed and read cleanly; candidate dimensions that were unknown all give the same cell value."
+    },
+    "summary": "OD not applicable; TP 38% on Net premium (before GST, incl. CNG/LPG-kit TP and PA owner-driver).",
+    "trace": [
+      {
+        "title": "Read the document",
+        "detail": "12 page(s), 19721 characters; 12 page(s) read by OCR (no text layer).",
+        "outcome": "ok"
+      },
+      {
+        "title": "Identify the insurer",
+        "detail": "Tata AIG (score 1.00): p1 \"CIN: U85110MH2000PLC128425 + Auto Secure - Liability Only Policy + UIN: IRDAN108RP0008V01200001\"; p1 \"TATA AIG GENERAL INSURANCE COMPANY LIMITED\"; p1 \"CIN: U85110MH2000PLC128425 + Auto Secure - Liability Only Policy + UIN: IRDAN108RP0008V01200001\"; p1 \"Email ID applicant. 1ae0e042@example.com 2 https://taig.in/551c26a Sea\".",
+        "outcome": "ok"
+      },
+      {
+        "title": "Insurer and sheet",
+        "detail": "Tata AIG -> Standard Grid, sheet Pvtcar (private car). CV, TW and Extended Warranty sheets do not apply; the hidden pivot sheets are stale and never read.",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "F1",
+            "value": "Standard Grid for Pvt Car LOB to be applicable from 1st Nov'25 policies",
+            "label": "private-car grid title"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Grid validity",
+        "detail": "Policy starts 2026-04-01, on or after 2025-11-01 (Mar'26 communication; Pvtcar!F1: applicable from 1st Nov'25 policies, no end date published).",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "F1",
+            "value": "Standard Grid for Pvt Car LOB to be applicable from 1st Nov'25 policies",
+            "label": "grid effective date"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Deal overrides",
+        "detail": "Calculation sequence is policy, fleet, PAN and code-specific deals before the standard grid; none is in the corpus, so the standard grid applies (C17). Rates are base commission only: the GWP-based incremental rule is not published in the workbook.",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C11",
+            "value": "Sequence for calculation",
+            "label": "calculation sequence"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C16",
+            "value": "e. Standard Grid",
+            "label": "standard grid is the last step"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C17",
+            "value": "Producers not on covered in pt 6 a/b/c shall by default fall under standard grid",
+            "label": "default to standard grid"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "F3",
+            "value": "***Below COA Rates would be Base Commission processed, Additionally GWP Based Rule will be Applicable",
+            "label": "base commission only"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C5",
+            "value": "Only Base Commission Needs to be updated in the Following sheet, Additionally we have created GWP based Rule Incremental COA",
+            "label": "base commission only"
+          }
+        ],
+        "outcome": "warn"
+      },
+      {
+        "title": "Dimension: section",
+        "detail": "Policy type satp -> Section Text \"SATP\"; the TP rate applies to net premium and OD is not applicable (Pvtcar!F2, General Guidelines!C7).",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "J5",
+            "value": "Section Text ",
+            "label": "Section Text header"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "F2",
+            "value": "Package/SAOD % on OD Premium; SATP % on Net Premium",
+            "label": "premium basis per section"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C7",
+            "value": "Payout % for Pvt Car- SATP on Net Premium; Package and SAOD on OD premium",
+            "label": "premium basis per section"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Dimension: business type",
+        "detail": "Business type renewal -> \"Renewal\". The grid has no break-in dimension. Previous insurer TATA AIG GENERAL INSURANCE CO.LTD. is Tata AIG, the current insurer: renewal. Previous policy expired 2024-08-30, 579 days before this cover starts (break-in).",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "H5",
+            "value": "Business Type",
+            "label": "Business Type header"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Dimension: fuel",
+        "detail": "Fuel cng -> \"CNG\".",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "I5",
+            "value": "Fuel Type",
+            "label": "Fuel Type header"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Dimension: NCB",
+        "detail": "Current NCB not established; it only matters on Renewal/Rollover Package and SAOD rows (others are \"All\").",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "K5",
+            "value": "NCB",
+            "label": "NCB header"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Dimension: add-on",
+        "detail": "Add-on covers are not a policy fact here, so Yes and No are both evaluated where the row splits on them (\"All\" elsewhere).",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "L5",
+            "value": "Add On",
+            "label": "Add On header"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Dimension: location",
+        "detail": "RTO location \"DELHI\" has its own column DELHI.",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V5",
+            "value": "DELHI",
+            "label": "DELHI header"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C10",
+            "value": "RTO Cluster identification- for all policies_RTO mapped on policy; for Brand New- If RTO is not available; producer tagged to branch and RTO of that branch to be used",
+            "label": "RTO on the policy decides the location"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Dimension: segment",
+        "detail": "The workbook has no make/model -> segment table, so the segment of MARUTI ZEN ESTILO is unknown and all 7 segment rows are evaluated (never guessed from cc or body type).",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "G5",
+            "value": "Type",
+            "label": "Type header"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "LTTP rule",
+        "detail": "TP tenure 364 days (1 year): C9 does not apply.",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C9",
+            "value": "LTTP not be considered for premium slab as well as payout %",
+            "label": "LTTP excluded from payout"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "OD rate",
+        "detail": "SATP: the policy has no own-damage premium, so there is no OD component (never 0%).",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "F2",
+            "value": "Package/SAOD % on OD Premium; SATP % on Net Premium",
+            "label": "premium basis per section"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C7",
+            "value": "Payout % for Pvt Car- SATP on Net Premium; Package and SAOD on OD premium",
+            "label": "premium basis per section"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "TP rate",
+        "detail": "38% - 38% of Net premium (before GST, incl. CNG/LPG-kit TP and PA owner-driver) (all 7 candidate cells agree).",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V511",
+            "value": 0.38,
+            "label": "Renewal / Compact / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V515",
+            "value": 0.38,
+            "label": "Renewal / MPV SUV / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V519",
+            "value": 0.38,
+            "label": "Renewal / Mid Size / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V523",
+            "value": 0.38,
+            "label": "Renewal / Ultra High End / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V527",
+            "value": 0.38,
+            "label": "Renewal / Mini / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V531",
+            "value": 0.38,
+            "label": "Renewal / High End / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V535",
+            "value": 0.38,
+            "label": "Renewal / Quadricycle / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V5",
+            "value": "DELHI",
+            "label": "DELHI header"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C10",
+            "value": "RTO Cluster identification- for all policies_RTO mapped on policy; for Brand New- If RTO is not available; producer tagged to branch and RTO of that branch to be used",
+            "label": "RTO on the policy decides the location"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "F2",
+            "value": "Package/SAOD % on OD Premium; SATP % on Net Premium",
+            "label": "premium basis per section"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "General Guidelines",
+            "cell": "C7",
+            "value": "Payout % for Pvt Car- SATP on Net Premium; Package and SAOD on OD premium",
+            "label": "premium basis per section"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "title": "Robustness: business type",
+        "detail": "business type came from a derived fact; Rollover gives the same rate (Pvtcar!V539, Pvtcar!V543, Pvtcar!V547, Pvtcar!V551, Pvtcar!V555, Pvtcar!V559, Pvtcar!V563), so it is moot.",
+        "citations": [
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V539",
+            "value": 0.38,
+            "label": "Rollover / Compact / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V543",
+            "value": 0.38,
+            "label": "Rollover / MPV SUV / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V547",
+            "value": 0.38,
+            "label": "Rollover / Mid Size / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V551",
+            "value": 0.38,
+            "label": "Rollover / Ultra High End / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V555",
+            "value": 0.38,
+            "label": "Rollover / Mini / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V559",
+            "value": 0.38,
+            "label": "Rollover / High End / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          },
+          {
+            "file": "raters/tata-aig/march-2026/Tata AIG Standard Grid_Communication_Mar'26_F_v2_0212.xlsx",
+            "sheet": "Pvtcar",
+            "cell": "V563",
+            "value": 0.38,
+            "label": "Rollover / Quadricycle / CNG / SATP / NCB All / Add On All @ DELHI = 38%"
+          }
+        ],
+        "outcome": "ok"
+      }
+    ],
+    "questions": []
+  }
+}
