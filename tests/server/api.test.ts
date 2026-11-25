@@ -114,6 +114,20 @@ describe('API happy path', () => {
   });
 });
 
+describe('API delete', () => {
+  it('removes the run and its PDF chunks, then 404s', async () => {
+    const run = await createRun();
+    await uploadAll(run.id);
+    const other = await createRun();
+    const res = await call('DELETE', `/api/runs/${run.id}`);
+    expect(res).toEqual({ status: 200, body: { deleted: run.id } });
+    expect((await call('GET', `/api/runs/${run.id}`)).status).toBe(404);
+    expect((await call('GET', `/api/runs/${run.id}/pdf/0`)).status).toBe(404);
+    expect(((await call('GET', '/api/runs')).body as RunRecord[]).map((r) => r.id)).toEqual([other.id]);
+    expect((await call('DELETE', `/api/runs/${run.id}`)).status).toBe(404);
+  });
+});
+
 describe('API validation', () => {
   const create = (over: Record<string, unknown>) =>
     call('POST', '/api/runs', { fileName: 'policy.pdf', fileSize: PDF.length, sha256: SHA, chunkCount: 3, ...over });

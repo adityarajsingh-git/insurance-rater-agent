@@ -25,6 +25,7 @@ export const api = {
   putChunk: (id: string, index: number, data: Blob) =>
     call<RunRecord>(`/api/runs/${id}/pdf/${index}`, { method: 'PUT', headers: { 'content-type': 'application/octet-stream' }, body: data }),
   pages: (id: string, pages: PageText[]) => call<RunRecord>(`/api/runs/${id}/pages`, post({ pages })),
+  remove: (id: string) => call<{ deleted: string }>(`/api/runs/${id}`, { method: 'DELETE' }),
   answers: (id: string, overrides: FactOverrides) => call<RunRecord>(`/api/runs/${id}/answers`, post({ overrides })),
 };
 

@@ -42,6 +42,9 @@ export function fakeBlobStore() {
       const e = entries.get(key);
       return e ? { etag: 'x', metadata: JSON.parse(e.metadata) } : null;
     },
+    async delete(key: string) {
+      entries.delete(key);
+    },
     async list(opts?: { prefix?: string }) {
       const keys = [...entries.keys()].filter((k) => k.startsWith(opts?.prefix ?? '')).sort();
       return { blobs: keys.map((key) => ({ key, etag: 'x' })), directories: [] };

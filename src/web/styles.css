@@ -41,6 +41,7 @@ button:disabled, .disabled { opacity: .5; cursor: not-allowed; }
 button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 button.primary:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
 button.ghost, .button.ghost { border-color: transparent; background: transparent; }
+button.danger:hover:not(:disabled) { color: var(--bad); background: var(--bad-bg); border-color: var(--bad-line); }
 button.link, a.link { border: 0; background: none; padding: 0; color: var(--accent); font-weight: 500; text-decoration: none; }
 button.link:hover:not(:disabled), a.link:hover { background: none; text-decoration: underline; }
 .icon-button { padding: 6px; border-color: transparent; background: transparent; color: var(--muted); }

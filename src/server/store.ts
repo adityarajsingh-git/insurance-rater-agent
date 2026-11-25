@@ -1,6 +1,6 @@
 // Persistence boundary for runs: JSON run records, compact summaries for the
 // history list, and raw PDF chunks. One contract, three backends.
-import { mkdir, readdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import type { getStore } from '@netlify/blobs';
 import { summarise, type RunRecord, type RunSummary } from './runs';
@@ -12,6 +12,8 @@ export interface RunStore {
   listRuns(): Promise<RunSummary[]>;
   putChunk(runId: string, index: number, data: Uint8Array): Promise<void>;
   getChunk(runId: string, index: number): Promise<Uint8Array | null>;
+  /** Removes the run record, its summary and every stored PDF chunk. Deleting an unknown id is a no-op. */
+  deleteRun(id: string): Promise<void>;
 }
 
 const LIST_LIMIT = 200;
@@ -37,6 +39,10 @@ export class MemoryRunStore implements RunStore {
   }
   async getChunk(runId: string, index: number) {
     return this.chunks.get(`${runId}/${index}`)?.slice() ?? null;
+  }
+  async deleteRun(id: string) {
+    this.runs.delete(id);
+    for (const key of [...this.chunks.keys()]) if (key.startsWith(`${id}/`)) this.chunks.delete(key);
   }
 }
 
@@ -92,6 +98,12 @@ export class FsRunStore implements RunStore {
     const buf = await this.read(path.join(this.dir, 'chunks', runId, `${index}.bin`));
     return buf ? new Uint8Array(buf) : null;
   }
+  async deleteRun(id: string) {
+    // Summary first, so the run leaves the history list even if a later step fails.
+    await rm(path.join(this.dir, 'runs', `${id}.summary.json`), { force: true });
+    await rm(path.join(this.dir, 'runs', `${id}.json`), { force: true });
+    await rm(path.join(this.dir, 'chunks', id), { recursive: true, force: true });
+  }
 }
 
 type BlobStore = ReturnType<typeof getStore>;
@@ -127,5 +139,11 @@ export class BlobRunStore implements RunStore {
   async getChunk(runId: string, index: number) {
     const buf = (await this.blobs.get(`chunks/${runId}/${index}`, { type: 'arrayBuffer' })) as ArrayBuffer | null;
     return buf ? new Uint8Array(buf) : null;
+  }
+  async deleteRun(id: string) {
+    // Record first, so the run leaves the history list even if a chunk delete fails.
+    await this.blobs.delete(`runs/${id}`);
+    const { blobs } = await this.blobs.list({ prefix: `chunks/${id}/` });
+    await Promise.all(blobs.map((b) => this.blobs.delete(b.key)));
   }
 }

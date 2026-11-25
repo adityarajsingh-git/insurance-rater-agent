@@ -45,9 +45,10 @@ interface Props {
   onResumeExtract: () => void;
   onAnswer: (overrides: FactOverrides) => void;
   getPdf: () => Promise<Blob>;
+  onDelete: () => void;
 }
 
-export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onAnswer, getPdf }: Props) {
+export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onAnswer, getPdf, onDelete }: Props) {
   const latestRev = run.analyses.length - 1;
   const [rev, setRev] = useState(latestRev);
   useEffect(() => setRev(run.analyses.length - 1), [run.analyses.length]); // jump to a new revision when it lands
@@ -77,9 +78,8 @@ export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onA
             <div className="meta">{meta.join(' · ')}</div>
           </div>
         </div>
-        {analysis && (
-          <div className="run-actions">
-            {run.analyses.length > 1 && (
+        <div className="run-actions">
+          {analysis && run.analyses.length > 1 && (
               <label className="select-wrap">
                 <span className="visually-hidden">Revision</span>
                 <select value={rev} onChange={(e) => setRev(Number(e.target.value))}>
@@ -91,6 +91,7 @@ export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onA
                 </select>
               </label>
             )}
+          {analysis && (
             <button
               className="ghost"
               title={`Analysis JSON, engine ${analysis.engineVersion}`}
@@ -98,8 +99,16 @@ export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onA
             >
               <Icon name="download" /> JSON
             </button>
-          </div>
-        )}
+          )}
+          <button
+            className="ghost danger"
+            disabled={!!job}
+            title={job ? 'Wait for the current step to finish' : 'Delete this analysis and its stored PDF'}
+            onClick={onDelete}
+          >
+            <Icon name="trash" /> <span className="hide-sm">Delete</span>
+          </button>
+        </div>
       </header>
 
       {job ? (
@@ -151,7 +160,7 @@ export function RunDetail({ run, job, busy, onResumeUpload, onResumeExtract, onA
   );
 }
 
-function RunBanners({ run, busy, onResumeUpload, onResumeExtract, onAnswer }: Omit<Props, 'job' | 'getPdf'>) {
+function RunBanners({ run, busy, onResumeUpload, onResumeExtract, onAnswer }: Omit<Props, 'job' | 'getPdf' | 'onDelete'>) {
   if (run.status === 'uploading')
     return (
       <div className="alert warn">

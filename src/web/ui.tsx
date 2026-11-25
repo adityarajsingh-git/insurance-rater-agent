@@ -43,6 +43,7 @@ const PATHS: Record<string, ReactNode> = {
   external: <><path d="M11 3.5h5.5V9" /><path d="M16.5 3.5L9 11" /><path d="M14 12v4.5H3.5V6H8" /></>,
   edit: <><path d="M4 16l1-4 8-8 3 3-8 8z" /><path d="M11.5 5.5l3 3" /></>,
   close: <path d="M5 5l10 10M15 5L5 15" />,
+  trash: <><path d="M4 5.5h12" /><path d="M8 5.5V4h4v1.5" /><path d="M5.5 5.5l.8 11h7.4l.8-11" /><path d="M8.5 8.5v5M11.5 8.5v5" /></>,
   plus: <path d="M10 4v12M4 10h12" />,
   chevron: <path d="M7.5 5l5 5-5 5" />,
   question: <><path d="M7.5 7.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.5v.4" /><path d="M10 14.5v.1" /></>,

@@ -180,7 +180,11 @@ async function route(req: Request, deps: ApiDeps): Promise<Response> {
 
   // /api/runs/:id
   if (parts.length === 2) {
-    allow('GET');
+    allow('GET', 'DELETE');
+    if (method === 'DELETE') {
+      await store.deleteRun(run.id);
+      return json({ deleted: run.id });
+    }
     return json(run);
   }
 

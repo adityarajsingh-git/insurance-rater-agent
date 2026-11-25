@@ -30,6 +30,7 @@ pdf.js text layer, else tesseract OCR
                                            analyse(pages)                  --->   run record + every analysis
 answer a clarifying question         --->  POST /api/runs/:id/answers  (re-analyses, appends a new revision)
 history list / open a run            <---  GET /api/runs, GET /api/runs/:id, GET .../pdf/:i
+delete a run (confirmed)             --->  DELETE /api/runs/:id  (removes the record and every stored chunk)
 ```
 
 `analyse()` in `src/core/agent.ts` is a pure, deterministic function. It takes page text plus any user answers and returns the facts and the rate:
@@ -48,7 +49,7 @@ Uploaded PDFs and completed analyses live in a site-scoped **Netlify Blobs** sto
 - `runs/<id>`: the run record as JSON. It holds file name, size, sha256, upload progress, the page text, the user's answers and **every analysis revision** (the latest is shown, older ones stay selectable). A compact summary sits in the blob's metadata, so the history list costs one `list` call plus metadata reads.
 - `chunks/<id>/<index>`: the PDF bytes in 2.5 MB chunks, up to 25 MB per file.
 
-Runs aren't kept in the browser or in function memory. The browser keeps only the open run id in the URL hash. So history and files survive a refresh, closing and reopening the browser, opening the app on another device, function cold starts, and redeploys: site-scoped Blobs aren't tied to a deploy. An interrupted upload can be resumed. Re-select the file, the sha256 must match, and only missing chunks are sent. A run whose text extraction was interrupted can be resumed from the stored chunks without re-selecting the file. There's no sign-in, so the sign-out case doesn't apply, and history is shared by everyone who opens the app.
+Runs aren't kept in the browser or in function memory. The browser keeps only the open run id in the URL hash. So history and files survive a refresh, closing and reopening the browser, opening the app on another device, function cold starts, and redeploys: site-scoped Blobs aren't tied to a deploy. An interrupted upload can be resumed. Re-select the file, the sha256 must match, and only missing chunks are sent. A run whose text extraction was interrupted can be resumed from the stored chunks without re-selecting the file. There's no sign-in, so the sign-out case doesn't apply, and history is shared by everyone who opens the app. Anyone can delete a run from its header, after a confirmation. That removes the record, every revision and the stored PDF chunks.
 
 Local development uses the same API code with a filesystem store under `./.data/` (`FsRunStore`). Tests use an in-memory store and a fake of the Blobs client. One shared test suite runs against all three stores (`tests/server/store.test.ts`).
 

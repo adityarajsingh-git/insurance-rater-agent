@@ -64,6 +64,22 @@ function contract(name: string, make: () => Promise<RunStore>) {
       expect(await s.getChunk('run1aaaaaaaa', 1)).toEqual(b);
       expect(await s.getChunk('run2aaaaaaaa', 0)).toBeNull();
     });
+
+    it('deletes a run with all its chunks and leaves other runs alone', async () => {
+      const s = await make();
+      await s.putRun(record('run1aaaaaaaa'));
+      await s.putRun(record('run2aaaaaaaa'));
+      await s.putChunk('run1aaaaaaaa', 0, Uint8Array.from([1]));
+      await s.putChunk('run1aaaaaaaa', 1, Uint8Array.from([2]));
+      await s.putChunk('run2aaaaaaaa', 0, Uint8Array.from([3]));
+      await s.deleteRun('run1aaaaaaaa');
+      expect(await s.getRun('run1aaaaaaaa')).toBeNull();
+      expect(await s.getChunk('run1aaaaaaaa', 0)).toBeNull();
+      expect(await s.getChunk('run1aaaaaaaa', 1)).toBeNull();
+      expect((await s.listRuns()).map((r) => r.id)).toEqual(['run2aaaaaaaa']);
+      expect(await s.getChunk('run2aaaaaaaa', 0)).toEqual(Uint8Array.from([3]));
+      await expect(s.deleteRun('run1aaaaaaaa')).resolves.toBeUndefined(); // already gone: no-op
+    });
   });
 }
 

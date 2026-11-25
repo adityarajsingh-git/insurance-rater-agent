@@ -160,6 +160,20 @@ function App() {
     });
   }
 
+  /** Deletes a run (record and stored PDF chunks) after a confirmation, then returns to the start screen. */
+  async function removeRun(r: RunRecord) {
+    if (!confirm(`Delete "${r.fileName}"?\n\nThe analysis, every revision and the stored PDF are removed for everyone. This cannot be undone.`)) return;
+    setJobError(null);
+    try {
+      await api.remove(r.id);
+      localPdfs.current.delete(r.id);
+      if (selectedRef.current === r.id) location.hash = '';
+      refreshList();
+    } catch (e) {
+      setJobError(`Could not delete: ${(e as Error).message}`);
+    }
+  }
+
   async function getPdf(r: RunRecord) {
     const cached = localPdfs.current.get(r.id);
     if (cached) return cached;
@@ -322,6 +336,7 @@ function App() {
             onResumeExtract={() => resumeFromServer(run)}
             onAnswer={(o) => answer(run, o)}
             getPdf={() => getPdf(run)}
+            onDelete={() => void removeRun(run)}
           />
         )}
       </main>
