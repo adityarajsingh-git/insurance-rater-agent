@@ -2,7 +2,7 @@
 
 Upload a motor policy PDF and get the broker commission the insurer's grid gives on it: the Own Damage (OD) and Third Party (TP) rates, the premium each rate applies to, and the expected brokerage in rupees. Every answer cites the policy page it read and the grid cell it used. When the evidence can't settle the answer, the app says so and asks one targeted question instead of guessing.
 
-- **Hosted app:** HOSTED_URL (no sign-in)
+- **Hosted app:** https://insurance-rater-agent.netlify.app (no sign-in)
 - **Decision traces for the four sample policies:** [`traces/`](./traces) (links in the table below)
 
 ## Results on the sample policies
