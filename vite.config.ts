@@ -43,4 +43,6 @@ function devApi(): Plugin {
 
 export default defineConfig({
   plugins: [react(), devApi()],
+  // The four sample policies are served from the site root, so "Try sample" on the home screen runs the real upload flow.
+  publicDir: 'sample-policies',
 });

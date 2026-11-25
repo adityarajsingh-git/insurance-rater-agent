@@ -1,12 +1,9 @@
 // Browser-side helpers: API client, hashing, chunked upload/download and page-text extraction.
-import * as pdfjs from 'pdfjs-dist';
 import type { TextItem } from 'pdfjs-dist/types/src/display/api';
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import type { FactOverrides, PageText } from '../core/types';
 import { darkenFaintText } from '../core/extract/ocr-prep';
 import { CHUNK_SIZE, expectedChunkCount, type RunRecord, type RunSummary } from '../server/runs';
-
-pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(path, init);
@@ -88,6 +85,9 @@ export function itemsToText(items: TextItem[]): string {
 
 /** Text layer when a page has enough of one, otherwise two OCR passes of a 300 dpi render, plain and contrast-enhanced (one tesseract worker for all pages). */
 export async function extractPages(pdf: Blob, onProgress: (p: ExtractProgress) => void): Promise<PageText[]> {
+  // pdf.js (~450 KB) is loaded on the first upload, not on page load.
+  const pdfjs = await import('pdfjs-dist');
+  pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
   const task = pdfjs.getDocument({ data: new Uint8Array(await pdf.arrayBuffer()) });
   const doc = await task.promise;
   let worker: Awaited<ReturnType<typeof import('tesseract.js').createWorker>> | null = null;
